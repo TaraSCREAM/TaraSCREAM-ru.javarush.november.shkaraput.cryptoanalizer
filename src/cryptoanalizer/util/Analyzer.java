@@ -57,6 +57,7 @@ public class Analyzer {
     private static void getSample(Ticket ticket) {
         try (BufferedReader br = new BufferedReader(new FileReader(ticket.getFilePath().toFile()))) {
             for (int i = 0; i < 3; i++) {
+                sample.append("\n");
                 sample.append(br.readLine());
             }
         } catch (IOException e) {
