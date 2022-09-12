@@ -1,10 +1,10 @@
 package cryptoanalizer.view.console;
 
 public enum MenuChoice {
-    ENCRYPT(1, "1. Зашифровка данных"),
-    DECRYPT(2, "2. Расшифровка данных"),
-    ANALISE(3, "3. Анализ"),
-    EXIT(4, "4. Выход");
+    ENCRYPT(1, "1. Encrypt"),
+    DECRYPT(2, "2. Decrypt"),
+    ANALISE(3, "3. Analyze"),
+    EXIT(4, "4. Exit");
 
     private int number;
     private String item;

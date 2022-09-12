@@ -6,13 +6,29 @@ import cryptoanalizer.view.console.MainMenu;
 import cryptoanalizer.view.console.Message;
 
 public class Runner {
-    public static void main(String[] args) {
-        Message.showStartMessage();
+    public static void run() {
         MainMenu.showMenu();
-        int choice = ConsoleReader.readInt();
-        Ticket ticket = TicketMaker.createTicket();
-
+        int choice = setChoice();
+        if (choice == 4) {
+            CryptoAnalyzer.setRunning(false);
+            return;
+        }
+        Ticket ticket = TicketMaker.createTicket(choice);
+        if (choice != 3) {
+            ticket.encrypt();
+        }
 
 
     }
+
+    private static int setChoice() {
+        int choice = ConsoleReader.readInt();
+        if (choice > 0 && choice < 5) {
+            return choice;
+        } else {
+            Message.wrongChoice();
+            return setChoice();
+        }
+    }
 }
+

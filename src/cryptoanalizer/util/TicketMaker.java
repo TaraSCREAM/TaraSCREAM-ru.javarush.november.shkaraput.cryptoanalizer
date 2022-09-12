@@ -2,23 +2,31 @@ package cryptoanalizer.util;
 
 import cryptoanalizer.Ticket;
 import cryptoanalizer.util.io.ConsoleReader;
+import cryptoanalizer.util.io.Reader;
 import cryptoanalizer.view.console.Message;
 import cryptoanalizer.view.console.Request;
 
 import java.io.File;
 import java.nio.file.Path;
-import java.util.List;
+
+
 
 import static cryptoanalizer.view.console.Request.*;
 
 public class TicketMaker {
 
-    public static Ticket createTicket() {
+    private TicketMaker() {
+
+    }
+
+    public static Ticket createTicket(int choice) {
         Ticket ticket = new Ticket();
+        ticket.setChoice(choice);
         Message.sendToGet(FILEPATH);
         ticket.setFilePath(existingPath(ConsoleReader.readText(), FILEPATH));
         Message.sendToGet(ALPHABET);
-        ticket.setAlphabetList(createAlphabet());
+        Path alphabetPath = existingPath(ConsoleReader.readText(), ALPHABET);
+        ticket.setAlphabetList(Reader.readAlphabet(alphabetPath));
         Message.sendToGet(KEY);
         ticket.setKey(ConsoleReader.readInt());
         return ticket;
@@ -27,7 +35,7 @@ public class TicketMaker {
 
     private static Path existingPath(String filePath, Request request) {
         File file = new File(filePath);
-        if (file.exists()) {
+        if (file.isFile()) {
             return Path.of(filePath);
         } else {
             Message.notExist(request);
@@ -35,10 +43,4 @@ public class TicketMaker {
         }
     }
 
-    private static List<Character> createAlphabet() {
-        Message.sendToGet(ALPHABET);
-        Path path = existingPath(ConsoleReader.readText(), ALPHABET);
-        return null;
-
-    }
 }

@@ -1,9 +1,9 @@
 package cryptoanalizer.view.console;
 
 public enum Request {
-    FILEPATH("путь к вашему файлу"),
-    ALPHABET("путь к файлу с алфавитом"),
-    KEY("ключ");
+    FILEPATH("path to your file"),
+    ALPHABET("path to your alphabet.txt file"),
+    KEY("key");
 
     private String text;
     private Request(String text) {

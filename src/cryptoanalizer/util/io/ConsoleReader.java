@@ -9,11 +9,8 @@ import java.util.Scanner;
 public class ConsoleReader {
     private static Scanner console = new Scanner(System.in);
     public static String readText() {
-
             String text = console.nextLine();
             return text;
-
-
     }
 
     public static int readInt() {

@@ -1,18 +1,29 @@
 package cryptoanalizer;
 
+import cryptoanalizer.util.Encryptor;
+
 import java.nio.file.Path;
 import java.util.List;
 
 public class Ticket {
+    private int choice;
     private Path filePath;
+    private List<Character> alphabetList;
 
     private int key;
+
+    public int getChoice() {
+        return choice;
+    }
+
+    public void setChoice(int choice) {
+        this.choice = choice;
+    }
 
     public Path getFilePath() {
         return filePath;
     }
 
-    private List<Character> alphabetList;
 
     public void setFilePath(Path filePath) {
         this.filePath = filePath;
@@ -26,11 +37,18 @@ public class Ticket {
         this.alphabetList = alphabetList;
     }
 
+
+
+
     public int getKey() {
         return key;
     }
 
     public void setKey(int key) {
         this.key = key;
+    }
+
+    public void encrypt() {
+        Encryptor.run(this);
     }
 }
