@@ -1,6 +1,7 @@
 package cryptoanalizer.util;
 
 import cryptoanalizer.Ticket;
+import cryptoanalizer.view.console.Message;
 
 import java.io.*;
 import java.nio.CharBuffer;
@@ -34,7 +35,7 @@ public class Encryptor {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        System.out.println("DONE");
+        Message.done();
     }
 
     private static int encryptingKey(Ticket ticket) {

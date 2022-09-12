@@ -11,6 +11,7 @@ public class CryptoAnalyzer {
         while (isRunning == true) {
             Runner.run();
         }
+        Message.exit();
     }
     public static void setRunning(boolean running) {
         isRunning = running;

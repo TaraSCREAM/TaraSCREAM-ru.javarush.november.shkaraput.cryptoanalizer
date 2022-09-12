@@ -22,4 +22,12 @@ public class Message {
     public static void wrongChoice() {
         System.out.printf("This is not a valid choice. %s", tryAgain);
     }
+
+    public static void done() {
+        System.out.println();
+    }
+
+    public static void exit() {
+        System.out.println(MenuChoice.EXIT.getProcess());
+    }
 }
