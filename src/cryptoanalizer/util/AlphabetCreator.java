@@ -13,7 +13,7 @@ public class AlphabetCreator {
     }
 
     public static List<Character> create(Path path) {
-        return Reader.readAlphabet(path);
+        return Reader.readToList(path);
     }
 
     public static List<Character> createCryptoAlphabet(List<Character> alphabet, int key, int choice) {

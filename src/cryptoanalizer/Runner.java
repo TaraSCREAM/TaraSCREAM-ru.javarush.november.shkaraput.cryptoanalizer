@@ -16,6 +16,8 @@ public class Runner {
         Ticket ticket = TicketMaker.createTicket(choice);
         if (choice != 3) {
             ticket.encrypt();
+        } else {
+            ticket.analyze();
         }
 
 

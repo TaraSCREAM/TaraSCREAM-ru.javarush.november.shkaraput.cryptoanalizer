@@ -17,7 +17,7 @@ public class ConsoleReader {
         int result;
         try {
             result = Integer.parseInt(readText());
-            return result;
+            return Math.abs(result);
         } catch (NumberFormatException e) {
             Message.notNumber();
             return readInt();

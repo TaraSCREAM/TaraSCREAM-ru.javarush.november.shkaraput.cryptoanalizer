@@ -4,8 +4,6 @@ import cryptoanalizer.Ticket;
 import cryptoanalizer.view.console.Message;
 
 import java.io.*;
-import java.nio.CharBuffer;
-import java.nio.channels.FileChannel;
 import java.nio.file.Path;
 import java.util.List;
 
@@ -13,29 +11,26 @@ public class Encryptor {
     public static void run(Ticket ticket) {
         List<Character> alphabet = ticket.getAlphabetList();
         int key = encryptingKey(ticket);
-        /*
-            read part of file
-            encrypting
-            write to new file
-        */
-        //reading
+
         try (BufferedReader reader = new BufferedReader(new FileReader(ticket.getFilePath().toFile()));
-                BufferedWriter writer = new BufferedWriter(new FileWriter(writableFile(ticket)))) {
+             BufferedWriter writer = new BufferedWriter(new FileWriter(createFileName(ticket)))) {
+
+            writer.write("");
+
             while (reader.ready()) {
-
-                //encrypting
                 char character = (char) reader.read();
-
+                character = Character.toLowerCase(character);
                 if (alphabet.contains(character)) {
                     int index = (alphabet.indexOf(character) + key) % alphabet.size();
-                    character = index != -1 ? alphabet.get(index) : alphabet.get(alphabet.size() + index);
+                    character = alphabet.get(index);
                 }
+
                 writer.append(character);
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-        Message.done();
+        Message.done(ticket.getChoice());
     }
 
     private static int encryptingKey(Ticket ticket) {
@@ -44,17 +39,31 @@ public class Encryptor {
         if (ticket.getChoice() == 1) {
             key = key % alphabet.size();
         } else {
-            key = (key % alphabet.size()) * -1;
+            key = alphabet.size() - (key % alphabet.size());
         }
         return key;
     }
 
-    private static File writableFile(Ticket ticket) {
+    private static File createFileName(Ticket ticket) {
         Path path = ticket.getFilePath();
         Path newPath;
-        String name = path.getFileName().toString().replaceAll(".txt", "_processed.txt");
+        String name = path.getFileName().toString().replaceAll(".txt", "_crypted.txt");
         newPath = Path.of(path.getParent().toString(), name);
         return newPath.toFile();
     }
 
+    public static String runSample(Ticket ticket, String sample) {
+        int key = encryptingKey(ticket);
+        List<Character> alphabet = ticket.getAlphabetList();
+        char[] chars = sample.toCharArray();
+        for (int i = 0; i < chars.length; i++) {
+            chars[i] = Character.toLowerCase(chars[i]);
+            if (alphabet.contains(chars[i])) {
+                int index = (alphabet.indexOf(chars[i]) + key) % alphabet.size();
+                chars[i] = alphabet.get(index);
+            }
+        }
+
+        return new String(chars);
+    }
 }
