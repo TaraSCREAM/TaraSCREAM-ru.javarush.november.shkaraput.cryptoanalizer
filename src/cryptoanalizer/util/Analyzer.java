@@ -3,13 +3,10 @@ package cryptoanalizer.util;
 import cryptoanalizer.AnalyzingChar;
 import cryptoanalizer.Ticket;
 import cryptoanalizer.util.io.ConsoleReader;
-import cryptoanalizer.view.console.MainMenu;
 import cryptoanalizer.view.console.MenuChoice;
 import cryptoanalizer.view.console.Message;
 
-import javax.security.auth.kerberos.KerberosTicket;
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -18,7 +15,10 @@ import java.util.List;
 
 public class Analyzer {
     private static List<Character> alphabet;
-    private static StringBuilder sample = new StringBuilder();
+    private static final StringBuilder sample = new StringBuilder();
+
+    private Analyzer() {
+    }
 
     public static void run(Ticket ticket) {
         ticket.setChoice(MenuChoice.DECRYPT.getChoice());
