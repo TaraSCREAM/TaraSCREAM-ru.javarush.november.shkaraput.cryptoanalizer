@@ -8,7 +8,7 @@ public class CryptoAnalyzer {
 
     public static void main(String[] args) {
         Message.showStartMessage();
-        while (isRunning == true) {
+        while (isRunning) {
             Runner.run();
         }
         Message.exit();

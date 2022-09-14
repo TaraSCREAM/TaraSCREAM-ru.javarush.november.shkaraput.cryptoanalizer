@@ -8,6 +8,9 @@ import java.nio.file.Path;
 import java.util.List;
 
 public class Encryptor {
+    private Encryptor() {
+
+    }
     public static void run(Ticket ticket) {
         List<Character> alphabet = ticket.getAlphabetList();
         int key = encryptingKey(ticket);

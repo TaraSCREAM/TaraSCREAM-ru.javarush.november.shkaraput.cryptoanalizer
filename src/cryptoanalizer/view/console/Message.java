@@ -4,8 +4,13 @@ import cryptoanalizer.util.io.ConsoleReader;
 
 public class Message {
 
+
     private static final String tryAgain = "Please try again \n";
     private static final String startMessage = "Hello! Welcome to cryptoanalyzer \"CryptoBro\"";
+
+    private Message() {
+
+    }
 
     public static void sendToGet(Request request) {
         System.out.printf("Please, input %s%n", request);

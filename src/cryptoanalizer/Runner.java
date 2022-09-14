@@ -6,6 +6,11 @@ import cryptoanalizer.view.console.MainMenu;
 import cryptoanalizer.view.console.Message;
 
 public class Runner {
+    private Runner() {
+
+    }
+
+
     public static void run() {
         MainMenu.showMenu();
         int choice = setChoice();

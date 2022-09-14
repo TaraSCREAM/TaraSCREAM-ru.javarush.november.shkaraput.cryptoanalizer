@@ -13,6 +13,10 @@ public class ConsoleReader {
             return text;
     }
 
+    private ConsoleReader() {
+
+    }
+
     public static int readInt() {
         int result;
         try {
