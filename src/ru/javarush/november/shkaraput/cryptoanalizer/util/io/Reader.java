@@ -1,4 +1,4 @@
-package cryptoanalizer.util.io;
+package ru.javarush.november.shkaraput.cryptoanalizer.util.io;
 
 import java.io.IOException;
 import java.nio.file.Path;
@@ -6,9 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Reader {
-    private Reader() {
-
-    }
+    private Reader() {}
 
     public static List<Character> readToList(Path path) {
         List<Character> list = new ArrayList<>();
@@ -21,6 +19,4 @@ public class Reader {
         }
         return list;
     }
-
-
 }

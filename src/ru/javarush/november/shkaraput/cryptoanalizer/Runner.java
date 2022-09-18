@@ -1,15 +1,12 @@
-package cryptoanalizer;
+package ru.javarush.november.shkaraput.cryptoanalizer;
 
-import cryptoanalizer.util.TicketMaker;
-import cryptoanalizer.util.io.ConsoleReader;
-import cryptoanalizer.view.console.MainMenu;
-import cryptoanalizer.view.console.Message;
+import ru.javarush.november.shkaraput.cryptoanalizer.util.TicketMaker;
+import ru.javarush.november.shkaraput.cryptoanalizer.util.io.ConsoleReader;
+import ru.javarush.november.shkaraput.cryptoanalizer.view.console.MainMenu;
+import ru.javarush.november.shkaraput.cryptoanalizer.view.console.Message;
 
 public class Runner {
-    private Runner() {
-
-    }
-
+    private Runner() {}
 
     public static void run() {
         MainMenu.showMenu();
@@ -24,8 +21,6 @@ public class Runner {
         } else {
             ticket.analyze();
         }
-
-
     }
 
     private static int setChoice() {

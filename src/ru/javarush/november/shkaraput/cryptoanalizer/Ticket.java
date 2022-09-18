@@ -1,7 +1,7 @@
-package cryptoanalizer;
+package ru.javarush.november.shkaraput.cryptoanalizer;
 
-import cryptoanalizer.util.Analyzer;
-import cryptoanalizer.util.Encryptor;
+import ru.javarush.november.shkaraput.cryptoanalizer.util.Analyzer;
+import ru.javarush.november.shkaraput.cryptoanalizer.util.Encryptor;
 
 import java.nio.file.Path;
 import java.util.List;

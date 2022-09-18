@@ -1,4 +1,4 @@
-package cryptoanalizer.view.console;
+package ru.javarush.november.shkaraput.cryptoanalizer.view.console;
 
 public enum MenuChoice {
     ENCRYPT(1, "1. Encrypt", "Encrypting"),

@@ -1,4 +1,4 @@
-package cryptoanalizer.view.console;
+package ru.javarush.november.shkaraput.cryptoanalizer.view.console;
 
 public enum Request {
     FILEPATH("path to your file"),
@@ -15,5 +15,4 @@ public enum Request {
     public String toString() {
         return this.text;
     }
-
 }

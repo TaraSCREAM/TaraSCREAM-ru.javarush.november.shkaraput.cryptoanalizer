@@ -1,10 +1,9 @@
-package cryptoanalizer;
+package ru.javarush.november.shkaraput.cryptoanalizer;
 
-import cryptoanalizer.view.console.Message;
+import ru.javarush.november.shkaraput.cryptoanalizer.view.console.Message;
 
 public class CryptoAnalyzer {
     private static boolean isRunning = true;
-
 
     public static void main(String[] args) {
         Message.showStartMessage();

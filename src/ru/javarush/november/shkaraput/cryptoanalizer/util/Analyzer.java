@@ -1,10 +1,10 @@
-package cryptoanalizer.util;
+package ru.javarush.november.shkaraput.cryptoanalizer.util;
 
-import cryptoanalizer.AnalyzingChar;
-import cryptoanalizer.Ticket;
-import cryptoanalizer.util.io.ConsoleReader;
-import cryptoanalizer.view.console.MenuChoice;
-import cryptoanalizer.view.console.Message;
+import ru.javarush.november.shkaraput.cryptoanalizer.AnalyzingChar;
+import ru.javarush.november.shkaraput.cryptoanalizer.Ticket;
+import ru.javarush.november.shkaraput.cryptoanalizer.util.io.ConsoleReader;
+import ru.javarush.november.shkaraput.cryptoanalizer.view.console.MenuChoice;
+import ru.javarush.november.shkaraput.cryptoanalizer.view.console.Message;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -15,7 +15,7 @@ import java.util.List;
 
 public class Analyzer {
     private static List<Character> alphabet;
-    private static final StringBuilder sample = new StringBuilder();
+    private static StringBuilder sample = new StringBuilder();
 
     private Analyzer() {
     }

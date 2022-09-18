@@ -1,6 +1,6 @@
-package cryptoanalizer.util.io;
+package ru.javarush.november.shkaraput.cryptoanalizer.util.io;
 
-import cryptoanalizer.view.console.Message;
+import ru.javarush.november.shkaraput.cryptoanalizer.view.console.Message;
 
 import java.util.Scanner;
 
@@ -9,13 +9,11 @@ import java.util.Scanner;
 public class ConsoleReader {
     private static Scanner console = new Scanner(System.in);
     public static String readText() {
-            String text = console.nextLine();
-            return text;
-    }
-
-    private ConsoleReader() {
+            return console.nextLine();
 
     }
+
+    private ConsoleReader() {}
 
     public static int readInt() {
         int result;
@@ -26,7 +24,5 @@ public class ConsoleReader {
             Message.notNumber();
             return readInt();
         }
-
     }
-
 }

@@ -1,6 +1,6 @@
-package cryptoanalizer.util;
+package ru.javarush.november.shkaraput.cryptoanalizer.util;
 
-import cryptoanalizer.util.io.Reader;
+import ru.javarush.november.shkaraput.cryptoanalizer.util.io.Reader;
 
 import java.nio.file.Path;
 import java.util.ArrayList;
@@ -8,9 +8,7 @@ import java.util.List;
 
 public class AlphabetCreator {
 
-    private AlphabetCreator() {
-
-    }
+    private AlphabetCreator() {}
 
     public static List<Character> create(Path path) {
         return Reader.readToList(path);

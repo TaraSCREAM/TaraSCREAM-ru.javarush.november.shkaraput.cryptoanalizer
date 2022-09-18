@@ -1,7 +1,7 @@
-package cryptoanalizer.util;
+package ru.javarush.november.shkaraput.cryptoanalizer.util;
 
-import cryptoanalizer.Ticket;
-import cryptoanalizer.view.console.Message;
+import ru.javarush.november.shkaraput.cryptoanalizer.Ticket;
+import ru.javarush.november.shkaraput.cryptoanalizer.view.console.Message;
 
 import java.io.*;
 import java.nio.file.Path;
@@ -27,7 +27,6 @@ public class Encryptor {
                     int index = (alphabet.indexOf(character) + key) % alphabet.size();
                     character = alphabet.get(index);
                 }
-
                 writer.append(character);
             }
         } catch (IOException e) {
@@ -66,7 +65,6 @@ public class Encryptor {
                 chars[i] = alphabet.get(index);
             }
         }
-
         return new String(chars);
     }
 }
